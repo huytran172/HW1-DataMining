@@ -9,7 +9,7 @@ import numpy as np
 #--------------------------
 def compute_P(A):
     '''
-        compute the transition matrix P from addjacency matrix A. P[j][i] represents the probability of moving from node i to node j.
+        compute the transition matrix P from adjacency matrix A. P[j][i] represents the probability of moving from node i to node j.
         Input: 
                 A: adjacency matrix, a (n by n) numpy matrix of binary values. If there is a link from node i to node j, A[j][i] =1. Otherwise A[j][i]=0 if there is no link.
         Output: 
