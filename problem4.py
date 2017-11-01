@@ -22,18 +22,13 @@ def compute_S(A):
     '''
     #########################################
     ## INSERT YOUR CODE HERE
-
-
-
-
-
-
-
+    S = np.array(A)
+    n = S.shape[0]
+    for i in range(n):
+        sum = S[:, i].sum()
+        S[:, i] = map(lambda x: x / sum if sum > 0 else 1. / n, S[:, i])
     #########################################
     return S
-
-
-
 #--------------------------
 def pagerank_v2(A):
     ''' 

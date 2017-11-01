@@ -18,9 +18,9 @@ def compute_P(A):
     '''
     #########################################
     ## INSER YOUR CODE HERE
-
-
-
+    P = np.array(A)
+    for i in range(P.shape[0]):
+        P[:, i] = map(lambda x: x / P[:, i].sum(), P[:, i])
     #########################################
     return P
 
@@ -38,10 +38,7 @@ def random_walk_one_step(P, x_i):
     '''
     #########################################
     ## INSERT YOUR CODE HERE
-
-
-
-
+    x_i_plus_1 = P.dot(x_i)
     #########################################
     return x_i_plus_1
 
@@ -61,12 +58,15 @@ def random_walk(P, x_0, max_steps=10000):
     '''
     #########################################
     ## INSERT YOUR CODE HERE
-
-
-
-
-
-
+    x = random_walk_one_step(P, x_0)
+    n_steps = 1
+    
+    while n_steps <= max_steps:
+        x_temp = random_walk_one_step(P, x)
+        if (np.allclose(x, x_temp)):
+            break
+        x = x_temp
+        n_steps += 1
     #########################################
     return x, n_steps
 

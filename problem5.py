@@ -30,11 +30,10 @@ def compute_G(A, alpha = 0.95):
     '''
     #########################################
     ## INSERT YOUR CODE HERE
-
-
-
-
-
+    n = A.shape[0]
+    all_one_matrix = np.ones((n, n))
+    S = compute_S(A)
+    G = alpha * S + (1 - alpha) * 1. / n * all_one_matrix
     #########################################
     return G
 
