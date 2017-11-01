@@ -39,8 +39,7 @@ def score2rank(x):
     '''
     #########################################
     ## INSERT YOUR CODE HERE
-    x = x.tolist()
-    sorted_ids = [i[0] for i in sorted(enumerate(x), key=lambda x: x[1], reverse=True)] 
+    sorted_ids = [i[0] for i in sorted(enumerate(x.tolist()), key=lambda x: x[1], reverse=True)] 
     #########################################
     return sorted_ids
 
